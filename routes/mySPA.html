@@ -1,0 +1,160 @@
+<DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <title>Product App</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/themes/newtheme.min.css" />
+        <link rel="stylesheet" type="text/css" href="/themes/jquery.mobile.icons.min.css" /> <!--https://themeroller.jquerymobile.com/?ver=1.4.5&style_id=20190609-5"-->
+        <link rel="stylesheet" type="text/css" href="/themes/jquery.mobile-1.4.5.css">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="/javascripts/my.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    </head>
+
+    <body>
+        <div data-role="page" id="home" data-theme="a">
+
+            <div data-role="header">
+                <h3>The Notes App</h3>
+                <h4>Home Page</h4>
+                <a href="#second" class="ui-btn-right">Next</a>
+            </div>
+
+            <div data-role="content" data-theme="a">
+
+                <div>
+                    <ul data-role="listview" data-autodividers="true" 
+                     id="notes" data-theme="a"></ul>
+                </div>
+
+                <br />
+                <a href="#addpage" class="ui-btn" data-transition="flip">Go to Add Page</a>
+                <br />
+                <h5>To delete a product, copy the product 
+                    name then paste after clicking next link.</h5>
+                <a href="#deletepage" class="ui-btn" 
+                data-transition="flip">Go to Delete Page</a>
+            </div>
+
+            <div data-role="footer" data-theme="a">
+                <h1>copyright Aziz 2019</h1>
+            </div>
+
+        </div>
+
+
+
+        <div data-role="page" id="details-page" data-theme="a">
+            <div data-theme="a" data-role="header" data-theme="a">
+                <h3>The Notes App</h3>
+                <h4>Details Page</h4>
+                <a href="#home" class="ui-btn-left">Back</a>
+            </div>
+
+            <div data-role="content" data-theme="a">
+
+                <p id="detailParmHere" hidden>change1</p>
+                <p id="showdata">change2</p>
+            </div>
+
+            <div data-role="footer" data-theme="a">
+                <h1>copyright Aziz 2019</h1>
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+        <div data-role="page" id="addpage" data-theme="a">
+            <div data-role="header">
+                <h3>The Notes App</h3>
+                <h4>Add Page</h4>
+            </div>
+
+            <div data-role="main" class="ui-content" data-theme="a">
+                <div>
+                    <h2>Add a new Note</h2>
+                    Name: <input type="text" id="newSubject" size="25" data-theme="a"/> <br />
+                    Year born: <input type="text" id="newDescription" size="60" onkeyup="changeYear()" data-theme="a"/> <br />
+                    Age: <input type="text" id="newPriority" size="5"  data-theme="a"/> <br />
+                    Suggestion: <input type="text" id="newSuggestion" size="5" data-theme="a"/> <br />
+                    <input type="button" value="Add New" onclick="addItem();" data-theme="a"/>
+                </div>
+
+                <a href="#home" class="ui-btn" data-transition="flip" 
+                data-rel="back" data-theme="a">Go Back</a>
+
+            </div>
+
+            <div data-role="footer" data-theme="a">
+                <h1>copyright Aziz 2019</h1>
+            </div>
+        </div>
+
+
+
+        <div data-role="page" id="deletepage" data-theme="a">
+            <div data-role="header" data-theme="a">
+                <h3>The Notes App</h3>
+                <h4>Delete Page</h4>
+            </div>
+
+            <div data-role="main" class="ui-content" data-theme="a">
+                <div>
+                    <h2>Delete a Note by Subject</h2>
+                    <input type="text" id="deleteNote" size="25" data-theme="a"/>
+                    <input type="button" value="Delete" onclick="deleteNote();" data-theme="a"/>
+                </div>
+
+                <a href="#home" class="ui-btn" data-transition="flip" 
+                data-rel="back" data-theme="a">Go Back</a>
+
+            </div>
+
+            <div data-role="footer" data-theme="a">
+                <h1>copyright Aziz 2019</h1>
+            </div>
+        </div>
+        <!-- begins-->
+
+        <div data-role="page" id="updatepage" data-theme="a">
+            <div data-role="header">
+                <h3>The Udate App</h3>
+                <h4>Udate Page</h4>
+            </div>
+
+            <div data-role="main" class="ui-content" data-theme="a">
+
+                <p id="detailParmHere" hidden>change1</p>
+                <p id="showdata">Check this out</p>
+                <!--<a href="#home" class="ui-btn-left">Back</a>-->
+
+
+                <p id="showOldname">Show old name</p>
+                Name: <input type="text" id="newName" size="25" data-theme="a"/> <br />
+                Year Born: <input type="text" id="newYearBorn" size="60" onkeyup="changeYearInUpdate()" data-theme="a"/> <br />
+                Age: <input type="text" id="newAge" size="5" data-theme="a"/> <br />
+                Suggestion: <input type="text" id="newSuggestion1" size="5" data-theme="a"/> <br />
+                ID: <input type="text" id="newID" size="5" data-theme="a"/> <br />
+
+                <input type="button" value="Update record" onclick="updateItem();" data-theme="a"/>
+                <a href="#home" class="ui-btn-left" data-theme="a">Back</a>
+
+
+
+            </div>
+
+            <div data-role="footer" data-theme="a">
+                <h1>copyright Aziz 2019</h1>
+            </div>
+        </div>
+        <!-- ends-->
+
+    </body>
+
+    </html>
