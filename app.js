@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 
 let option = { useNewUrlParser: true };  // new
 const MongoClient = require('mongodb').MongoClient;
-const mongoUrl = "mongodb+srv://BCstudent:BCstudentPW@kurtcluster-du4fk.mongodb.net/test?retryWrites=true";
+// mongoUrl = "mongodb+srv://BCstudent:BCstudentPW@kurtcluster-du4fk.mongodb.net/test?retryWrites=true";
 //const mongoUrl = "mongodb+srv://BCstudent:root@mytestcluster-hmg4k.mongodb.net/test?retryWrites=true";
-//const mongoUrl = "mongodb+srv://bcstudent:bardak74@azizcluster-pcn9g.mongodb.net/test?retryWrites=true";
+const mongoUrl = "mongodb+srv://BCstudent:bardak74@azizcluster-pcn9g.mongodb.net/test?retryWrites=true"
 
 
 
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // new code from example
 //const port = 3000;
-const port=process.env.PORT || 3000
+const port = process.env.PORT || 3000
 MongoClient.connect(mongoUrl, option, (err, database) => {
     if (err) return console.log(err)
     //let db = database.db("Prog219DB")
